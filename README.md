@@ -1,31 +1,27 @@
-# streaming-sensevoice
+# Canto Transcript Backend
 
-Streaming SenseVoice processes inference in chunks of [SenseVoice](https://github.com/FunAudioLLM/SenseVoice).
+A websocket server that receives audio data and transcribes it using SenseVoice small from Alibaba. (pseudo realtime)
 
-## Usage
+A fork of [streaming-sensevoice](https://github.com/pengzhendong/streaming-sensevoice)
 
-- transcribe wav file
+Python version: 3.12.1 (Confirmed working)
 
-```bash
-$ python main.py
-```
+## Setup
 
-![](images/screenshot.png)
+- python3.12 -m venv venv
 
-- transcribe from microphone
+- source .venv/bin/activate
 
-```bash
-$ python realtime.py
-```
+- pip install -r requirements.txt
 
-- transcribe from websocket
+## Run
 
-A basic WebSocket service built with [`Recorder`](https://github.com/xiangyuecn/Recorder) and `FastAPI`; the frontend uses `MP3` format to transmit audio information to reduce latency and increase stability.
+- python main.py
 
-```bash
-pip install -r requirements-ws-demo.txt
-python realtime_ws_server_demo.py
+  (It should begin to download the model and then start up the server `Downloading Model from https://www.modelscope.cn`)
 
-# check cli options
-python realtime_ws_server_demo.py --help
-```
+  You'll receive an error `Loading remote code failed: model, No module named 'model'` but it should continue to run.
+
+  `Uvicorn running on http://127.0.0.1:8000`
+
+- Open up `http://127.0.0.1:8000` in your browser to test the websocket server
