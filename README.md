@@ -24,4 +24,4 @@ Python version: 3.12.1 (Confirmed working)
 
   `Uvicorn running on http://127.0.0.1:8000`
 
-- Open up `http://127.0.0.1:8000` in your browser to test the websocket server
+- Open up http://127.0.0.1:8000 in your browser to test the websocket server

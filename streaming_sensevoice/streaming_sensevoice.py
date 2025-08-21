@@ -35,7 +35,7 @@ class StreamingSenseVoice:
         padding: int = 8,
         beam_size: int = 3,
         contexts: List[str] = None,
-        language: str = "zh",
+        language: str = "yue",
         textnorm: bool = False,
         device: str = "cpu",
         model: str = "iic/SenseVoiceSmall",
